@@ -22,7 +22,7 @@ const Hero = () => {
         >
           <div className="w-full md:w-3/5 md:pr-2 mb-4 md:mb-0">
             <label htmlFor="location" className="sr-only">Location</label>
-            <input
+            <input 
               type="text"
               id="location"
               placeholder="Enter Location (City, State, Zip, etc)"
