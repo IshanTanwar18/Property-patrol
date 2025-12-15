@@ -1,4 +1,5 @@
 import React from 'react'
+import PropertyMap from './PropertyMap';
 import {
     FaBed,
     FaBath,
@@ -7,6 +8,12 @@ import {
     FaCheck,FaMapMarker
 } from 'react-icons/fa';
 const PropertyDetails = ( {property} ) => {
+
+
+         const fullAddress = `${property.location.street}, ${property.location.city}, ${property.location.state}, ${property.location.zipcode}`;
+
+        console.log("Map address:", fullAddress);  // Debug
+
   return (
      <main>
             <div
@@ -93,7 +100,10 @@ const PropertyDetails = ( {property} ) => {
               </ul>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md mt-6">
-              <div id="map"></div>
+
+            <PropertyMap 
+                address={`${property.location.street}, ${property.location.city}, ${property.location.state}, ${property.location.zipcode}`}
+                    />
             </div>
           </main>
 

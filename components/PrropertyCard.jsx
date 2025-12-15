@@ -18,14 +18,14 @@ const PrropertyCard = ({property}) => {
    
   return (
      <div className="rounded-xl shadow-md relative">
-            <Image
-              src={`/properties/${property.images[0]}`}
+           
+           { property.images?.[0] ? ( <Image  src={property.images[0]}
               alt=""
               width={0}
               height={0}
               sizes='100vw'
               className='w-full h-auto rounded-t-xl'
-            />
+            />):null}
             <div className="p-4">
               <div className="text-left md:text-center lg:text-left mb-6">
                 <div className="text-gray-600">{property.type}</div>
