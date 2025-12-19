@@ -1,4 +1,4 @@
-import React from 'react'
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaBed, FaBath,FaRulerCombined,FaMoneyBill,FaMapMarker} from  'react-icons/fa'
@@ -80,4 +80,4 @@ const PrropertyCard = ({property}) => {
   )
 }
 
-export default PrropertyCard
+export default PrropertyCard;
