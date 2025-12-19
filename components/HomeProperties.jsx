@@ -2,15 +2,13 @@ export const dynamic = 'force-dynamic';
 import PrropertyCard from './PrropertyCard';
 import Link from 'next/link';
 
-import {fetchProperties} from '@/util/request.js';
+import { getRecentProperties } from '@/lib/getRecentProperties'
 const HomeProperties = async() => {
-    const data= await fetchProperties();
-    const properties=data?.properties||[];
 
 
-    const recentProperties= properties
-    .sort(()=>Math.random()-Math.random())
-    .slice(0,3);
+   const properties = await getRecentProperties(3);
+
+
   return(
     <div>
      <section className="px-4 py-6">
@@ -19,10 +17,10 @@ const HomeProperties = async() => {
             Recent Properties
          </h2>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-         { recentProperties.length ===0? (
+         { properties.length ===0? (
             <p>No Properties Found</p>)
             :
-            recentProperties.map((property)=>(
+            properties.map((property)=>(
                 <PrropertyCard key={property._id}  property={property}/>
             )
             )
