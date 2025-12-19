@@ -3,11 +3,12 @@ import PrropertyCard from './PrropertyCard';
 import Link from 'next/link';
 
 import {fetchProperties} from '@/util/request.js';
+export const dynamic = 'force-dynamic';
 
 
 const HomeProperties = async() => {
     const data= await fetchProperties();
-    const properties=data.properties;
+    const properties=data?.properties||[];
 
 
     const recentProperties= properties

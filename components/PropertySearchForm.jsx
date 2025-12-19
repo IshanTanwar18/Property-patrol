@@ -2,6 +2,9 @@
 
 import {useState} from 'react'
 import { useRouter } from 'next/navigation';
+
+export const dynamic = 'force-dynamic';
+
 const PropertySearchForm = () => {
     const[location,setLocation]=useState('');
     const[propertyType,setPropertyType]=useState('All');
