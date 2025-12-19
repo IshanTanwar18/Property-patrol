@@ -8,8 +8,8 @@ async function fetchProperties(){
     //Handle the case where domain is not available yet
 
       if(!apiDomain){
-        return [];
-      }
+ return { properties: [] };     
+ }
           const res=await fetch(`${apiDomain}/properties`,{cache:
             'no-store'
           });
