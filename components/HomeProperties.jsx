@@ -45,4 +45,5 @@ const HomeProperties = async() => {
         </div>
   )
 }
+export default HomeProperties;
 
