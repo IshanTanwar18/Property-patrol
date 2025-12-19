@@ -1,3 +1,4 @@
+const apiDomain=process.env.NEXT_PUBLIC_API_DOMAIN || null;
 export const dynamic = 'force-dynamic';
 
 
@@ -6,8 +7,10 @@ async function fetchProperties(){
   try{
     //Handle the case where domain is not available yet
 
-   
-          const res=await fetch(`https://property-patrol-git-master-ishan-tanwars-projects.vercel.app/api/properties`,{cache:
+      if(!apiDomain){
+ return { properties: [] };     
+ }
+          const res=await fetch(`${apiDomain}/properties`,{cache:
             'no-store'
           });
         
@@ -26,7 +29,10 @@ async function fetchProperty(id){
   try{
     //Handle the case where domain is not available yet
 
-          const res=await fetch(`https://property-patrol-git-master-ishan-tanwars-projects.vercel.app/api/properties/${id}`, {
+      if(!apiDomain){
+        return null;
+      }
+          const res=await fetch(`${apiDomain}/properties/${id}`, {
       cache: 'no-store',});
         
           if(!res.ok){

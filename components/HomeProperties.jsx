@@ -1,4 +1,3 @@
-export const dynamic = 'force-dynamic';
 import PrropertyCard from './PrropertyCard';
 import Link from 'next/link';
 
