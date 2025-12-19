@@ -7,7 +7,7 @@ async function fetchProperties(){
     //Handle the case where domain is not available yet
 
    
-          const res=await fetch(`${process.env.NEXTAUTH_URL || ''}/api/properties`,{cache:
+          const res=await fetch(`https://property-patrol-git-master-ishan-tanwars-projects.vercel.app/api/properties`,{cache:
             'no-store'
           });
         
@@ -26,7 +26,7 @@ async function fetchProperty(id){
   try{
     //Handle the case where domain is not available yet
 
-          const res=await fetch(`${process.env.NEXTAUTH_URL || ''}/api/properties/${id}`, {
+          const res=await fetch(`https://property-patrol-git-master-ishan-tanwars-projects.vercel.app/api/properties/${id}`, {
       cache: 'no-store',});
         
           if(!res.ok){
