@@ -30,7 +30,10 @@ const MessageSchema= new Schema({
      body:{
        type:String, 
      },
-   
+     read:{
+      type:Boolean,
+      default:false,
+     }
 },
 {timestamps:true}
 );

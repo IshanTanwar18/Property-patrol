@@ -14,16 +14,22 @@ export const GET=async()=>{
         await connectDB();
         const sessionUser=await getSessionUser();
         if(!sessionUser || !sessionUser.user){
-             return new Response(
-                
-    JSON.stringify('User Id is required'),
+             return new Response(JSON.stringify('User Id is required'),
            {status:401});
         }
 
-        const {userId}=sessionUser();
-        const messages=await Message.find({recipient:userId})
-        .populate('sender','name')
-        .populate('property','title')
+        const {userId}=sessionUser;
+        const readMessages=await Message.find({recipient:userId,read:true})
+        .sort({createdAt:-1})   //Sort read messages in asc order
+        .populate('sender','username')
+        .populate('property','name');
+
+         const unreadMessages=await Message.find({recipient:userId,read:false})
+        .sort({createdAt:-1})   //Sort read messages in asc order
+        .populate('sender','username')
+        .populate('property','name');
+
+        const messages = [...unreadMessages,...readMessages];
         
         return new Response(JSON.stringify(messages),{status:200});
     } catch (error) {

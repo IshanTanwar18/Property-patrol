@@ -1,9 +1,10 @@
 import React from 'react'
-
-const MessagePage = () => {
+import Messages from '@/components/Messages';
+const MessagesPage = () => {
   return (
-    <div>MessagePage</div>
+    
+    <Messages/>
   )
 }
 
-export default MessagePage
+export default MessagesPage;

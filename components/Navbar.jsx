@@ -8,6 +8,7 @@ import logo from '@/assets/images/logo-white.png';
 import profileDefault from '@/assets/images/profile.png';
 import {FaGoogle} from 'react-icons/fa';
 import { signIn,signOut,useSession,getProviders} from 'next-auth/react';
+import UnreadMessageCount from './UnreadMessageCount';
 
 
 const Navbar = () => {
@@ -38,8 +39,7 @@ const profileImage = session?.user?.image;
         <div className='relative flex h-20 items-center justify-between'>
           <div className='absolute inset-y-0 left-0 flex items-center md:hidden'>
             {/* <!-- Mobile menu button--> */}
-            <button
-              type='button'
+            <button  type='button'
               id='mobile-dropdown-button'
               className='relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
               aria-controls='mobile-menu'
@@ -147,10 +147,7 @@ const profileImage = session?.user?.image;
                   />
                 </svg>
               </button>
-              <span className='absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full'>
-                2
-                {/* <!-- Replace with the actual number of notifications --> */}
-              </span>
+           <UnreadMessageCount session={session}/>
             </Link>
             {/* <!-- Profile dropdown button --> */}
             <div className='relative ml-3'>
