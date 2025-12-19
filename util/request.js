@@ -11,13 +11,12 @@ async function fetchProperties(){
       if(!apiDomain){
  return { properties: [] };     
  }
-          const res=await fetch(`${apiDomain}/api/properties`,{cache:
-            'no-store'
-          });
-        
-          if(!res.ok){
-            throw new Error('Failed to fetch data');
-          }
+          const url = `${apiDomain}/api/properties`;
+console.log('fetchProperties url=', url);
+const res = await fetch(url, { cache: 'no-store' });
+console.log('fetchProperties status=', res.status);
+
+
           return  res.json();
   }
   catch(error){
