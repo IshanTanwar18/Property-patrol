@@ -1,4 +1,4 @@
-import React from 'react'
+export const dynamic = 'force-dynamic';
 import Hero from '@/components/Hero';
 import InfoBoxes from '@/components/InfoBoxes';
 import HomeProperties from '@/components/HomeProperties';

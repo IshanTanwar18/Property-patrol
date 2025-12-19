@@ -1,9 +1,9 @@
-import React from 'react'
+export const dynamic = 'force-dynamic';
 import PrropertyCard from './PrropertyCard';
 import Link from 'next/link';
 
 import {fetchProperties} from '@/util/request.js';
-export const dynamic = 'force-dynamic';
+
 
 
 const HomeProperties = async() => {
@@ -22,7 +22,7 @@ const HomeProperties = async() => {
             Recent Properties
          </h2>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-         { recentProperties ===0? (
+         { recentProperties.length ===0? (
             <p>No Properties Found</p>)
             :
             recentProperties.map((property)=>(

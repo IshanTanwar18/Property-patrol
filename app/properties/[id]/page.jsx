@@ -36,7 +36,7 @@ setLoading(true);
         try {
            const property=await fetchProperty(id);
            console.log(property);
-           setProperty(property.property);
+           setProperty(property.properties);
         } catch (error) {
           console.error('Error fetching property:',error);
         }
