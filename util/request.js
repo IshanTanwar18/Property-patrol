@@ -1,5 +1,6 @@
-const apiDomain=process.env.NEXT_PUBLIC_API_DOMAIN || null;
 export const dynamic = 'force-dynamic';
+const apiDomain=process.env.NEXT_PUBLIC_DOMAIN || null;
+
 
 
 //Fetch All properties
@@ -10,7 +11,7 @@ async function fetchProperties(){
       if(!apiDomain){
  return { properties: [] };     
  }
-          const res=await fetch(`${apiDomain}/properties`,{cache:
+          const res=await fetch(`${apiDomain}/api/properties`,{cache:
             'no-store'
           });
         
@@ -32,7 +33,7 @@ async function fetchProperty(id){
       if(!apiDomain){
         return null;
       }
-          const res=await fetch(`${apiDomain}/properties/${id}`, {
+          const res=await fetch(`${apiDomain}/api/properties/${id}`, {
       cache: 'no-store',});
         
           if(!res.ok){
