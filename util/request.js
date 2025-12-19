@@ -14,7 +14,10 @@ async function fetchProperties(){
           const url = `${apiDomain}/api/properties`;
 console.log('fetchProperties url=', url);
 const res = await fetch(url, { cache: 'no-store' });
-console.log('fetchProperties status=', res.status);
+const text = await res.text();
+console.log('fetchProperties status=', res.status, 'body=', text.slice(0,1000));
+if (!res.ok) throw new Error(`fetch failed ${res.status}`);
+return JSON.parse(text);
 
 
           return  res.json();
