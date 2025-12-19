@@ -1,4 +1,3 @@
-const apiDomain=process.env.NEXT_PUBLIC_API_DOMAIN || null;
 export const dynamic = 'force-dynamic';
 
 
@@ -7,10 +6,8 @@ async function fetchProperties(){
   try{
     //Handle the case where domain is not available yet
 
-      if(!apiDomain){
- return { properties: [] };     
- }
-          const res=await fetch(`${apiDomain}/properties`,{cache:
+   
+          const res=await fetch(`${process.env.NEXTAUTH_URL || ''}/api/properties`,{cache:
             'no-store'
           });
         
@@ -29,10 +26,7 @@ async function fetchProperty(id){
   try{
     //Handle the case where domain is not available yet
 
-      if(!apiDomain){
-        return null;
-      }
-          const res=await fetch(`${apiDomain}/properties/${id}`, {
+          const res=await fetch(`${process.env.NEXTAUTH_URL || ''}/api/properties/${id}`, {
       cache: 'no-store',});
         
           if(!res.ok){
