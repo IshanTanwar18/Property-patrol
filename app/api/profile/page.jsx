@@ -6,6 +6,8 @@ import Link from 'next/link';
 import {useSession} from 'next-auth/react';
 import profileDefault from '@/assets/images/profile.png';
 import {toast} from 'react-toastify';
+export const dynamic = 'force-dynamic';
+
 
 const ProfilePage = () => {
 
