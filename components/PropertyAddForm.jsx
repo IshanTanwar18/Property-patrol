@@ -1,6 +1,6 @@
 'use client';
 import {useState,useEffect} from 'react';
-
+import { Tooltip } from './ui/tooltip-card';
 import React from 'react'
 
 
@@ -139,7 +139,11 @@ const PropertyAddForm = () => {
               >
                 Listing Name
               </label>
-              <input
+               <Tooltip
+          containerClassName="text-neutral-600 dark:text-neutral-400"
+          content="Name with which Property Will be presented to Buyer"
+        >
+           <input
                 type="text"
                 id="name"
                 name="name"
@@ -149,6 +153,8 @@ const PropertyAddForm = () => {
                 value={fields.name}
                 onChange={handleChange}
               />
+        </Tooltip>
+             
             </div>
 
             <div className="mb-4">
