@@ -15,7 +15,7 @@ const Navbar = () => {
 
 
   const { data:session } = useSession();
-const profileImage = session?.user?.image;
+  const profileImage = session?.user?.image;
 
     const [isMobileMenuOpen,setIsMobileMenuOpen]=useState(false);
     const [isProfileMenuOpen,setIsProfileMenuOpen]=useState(false);
@@ -34,14 +34,14 @@ const profileImage = session?.user?.image;
 
 
   return (
-    <nav className='bg-blue-700 border-b border-blue-500'>
+    <nav className='bg-[#ECE6E7] border-b border-[#ECE6E7]'>
       <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
         <div className='relative flex h-20 items-center justify-between'>
           <div className='absolute inset-y-0 left-0 flex items-center md:hidden'>
             {/* <!-- Mobile menu button--> */}
             <button  type='button'
               id='mobile-dropdown-button'
-              className='relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
+              className='relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset'
               aria-controls='mobile-menu'
               aria-expanded='false'
               onClick={()=>setIsMobileMenuOpen((prev)=>!prev)}
@@ -68,9 +68,9 @@ const profileImage = session?.user?.image;
           <div className='flex flex-1 items-center justify-center md:items-stretch md:justify-start'>
             {/* <!-- Logo --> */}
             <Link className='flex flex-shrink-0 items-center' href='/'>
-              <Image className='h-10 w-auto' src={logo} alt='PropertyPulse' />
+              <Image className='h-10 w-auto bg-[#E11D48] rounded-[23px]' src={logo} alt='PropertyPulse' />
 
-              <span className='hidden md:block text-white text-2xl font-bold ml-2'>
+              <span className='hidden md:block text-Black text-2xl font-bold ml-2'>
                 PropertyPatrol
               </span>
             </Link>
@@ -79,20 +79,20 @@ const profileImage = session?.user?.image;
               <div className='flex space-x-2'>
                 <Link
                   href='/'
-                  className={`${pathname === '/' ? 'bg-black' : ''} text-white  hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 `}
+                  className={`${pathname === '/' ? 'bg-white' : ''} text-Black  hover:bg-[#E11D48] hover:text-white rounded-md px-3 py-2 `}
                 >
                   Home
                 </Link>
                 <Link
                   href='/properties'
-                  className={`${pathname === '/properties' ? 'bg-black' : ''} text-white  hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 `}
+                  className={`${pathname === '/' ? 'bg-white' : ''} text-Black  hover:bg-[#E11D48] hover:text-white rounded-md px-3 py-2 `}
                 >
                   Properties
                 </Link>
                 { session && (
                       <Link
                   href='/properties/add'
-                  className={`${pathname === '/properties/add' ? 'bg-black' : ''} text-white  hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 `}
+                  className={`${pathname === '/' ? 'bg-white' : ''} text-Black  hover:bg-[#E11D48] hover:text-white rounded-md px-3 py-2 `}
                 >
                   Add Property
                 </Link>
@@ -128,7 +128,7 @@ const profileImage = session?.user?.image;
             <Link href='/messages' className='relative group'>
               <button
                 type='button'
-                className='relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
+                className='relative rounded-full bg-white p-1 text-black hover:bg-[#E11D48] hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
               >
                 <span className='absolute -inset-1.5'></span>
                 <span className='sr-only'>View notifications</span>
@@ -163,7 +163,7 @@ const profileImage = session?.user?.image;
                   <span className='absolute -inset-1.5'></span>
                   <span className='sr-only'>Open user menu</span>
                   <Image
-                    className='h-8 w-8 rounded-full'
+                    className='h-8 w-8 rounded-full '
                     src={profileImage || profileDefault}
                     alt=''
                     width={40}
