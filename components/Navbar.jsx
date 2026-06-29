@@ -81,7 +81,7 @@ const Navbar = () => {
                   href='/'
                   className={`${pathname === '/' ? 'bg-white' : ''} text-Black  hover:bg-[#E11D48] hover:text-white rounded-md px-3 py-2 `}
                 >
-                  Home
+                  Sweet Home
                 </Link>
                 <Link
                   href='/properties'
