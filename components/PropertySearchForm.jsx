@@ -9,7 +9,7 @@ const PropertySearchForm = () => {
     const[location,setLocation]=useState('');
     const[propertyType,setPropertyType]=useState('All');
 
-     const router=useRouter();
+    const router=useRouter();
 
     const handleSubmit=(e)=>{
         e.preventDefault();
